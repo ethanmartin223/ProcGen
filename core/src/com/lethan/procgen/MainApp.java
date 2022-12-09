@@ -24,6 +24,8 @@ public class MainApp extends ApplicationAdapter {
 	private ScalingViewport veiwport;
 	private InputAdapter inputMultiplexer;
 
+	private World world;
+
 	@Override
 	public void create () {
 		camera = new OrthographicCamera();
@@ -42,6 +44,8 @@ public class MainApp extends ApplicationAdapter {
 		inputMultiplexer.addProcessor(inputHandler);
 		inputMultiplexer.addProcessor(new GestureDetector(gestureHandler));
 		Gdx.input.setInputProcessor(inputMultiplexer);
+
+		world = new World();
 	}
 
 	@Override
@@ -51,7 +55,7 @@ public class MainApp extends ApplicationAdapter {
 		shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
 			shapeRenderer.setProjectionMatrix(camera.combined);
 			shapeRenderer.setColor(Color.BLUE);
-			shapeRenderer.rect(70,60, 20,20);
+			world.render();
 			shapeRenderer.end();
 		camera.update();
 	}
