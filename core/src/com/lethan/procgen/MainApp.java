@@ -55,7 +55,7 @@ public class MainApp extends ApplicationAdapter {
 		shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
 			shapeRenderer.setProjectionMatrix(camera.combined);
 			shapeRenderer.setColor(Color.BLUE);
-			world.render();
+			world.render(shapeRenderer);
 			shapeRenderer.end();
 		camera.update();
 	}
