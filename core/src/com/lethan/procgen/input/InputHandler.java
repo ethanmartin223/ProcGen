@@ -53,7 +53,7 @@ public class InputHandler implements InputProcessor {
 
     @Override
     public boolean scrolled(float amountX, float amountY) {
-        this.camera.zoom+=amountY*.15;
+        this.camera.zoom+=amountY;
         return false;
     }
 }

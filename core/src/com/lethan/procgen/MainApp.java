@@ -37,8 +37,8 @@ public class MainApp extends ApplicationAdapter {
 
 		shapeRenderer = new ShapeRenderer();
 
-		gestureHandler = new GestureHandler(camera);
 		inputHandler = new InputHandler(camera);
+		gestureHandler = new GestureHandler(camera);
 
 		InputMultiplexer inputMultiplexer = new InputMultiplexer();
 		inputMultiplexer.addProcessor(inputHandler);
@@ -62,5 +62,6 @@ public class MainApp extends ApplicationAdapter {
 	
 	@Override
 	public void dispose () {
+		shapeRenderer.dispose();
 	}
 }

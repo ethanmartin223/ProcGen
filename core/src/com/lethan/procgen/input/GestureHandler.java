@@ -35,7 +35,7 @@ public class GestureHandler implements GestureDetector.GestureListener {
 
     @Override
     public boolean pan(float x, float y, float deltaX, float deltaY) {
-        camera.translate(-deltaX, -deltaY);
+        camera.translate(-deltaX*camera.zoom, -deltaY*camera.zoom);
         return true;
     }
 
@@ -46,10 +46,7 @@ public class GestureHandler implements GestureDetector.GestureListener {
 
     @Override
     public boolean zoom(float initialDistance, float distance) {
-        float ratio = initialDistance / distance; //I get this
-        camera.zoom *= ratio;
-        System.out.println(camera.zoom);
-        return true;
+        return false;
     }
 
     @Override
